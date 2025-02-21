@@ -12,7 +12,7 @@ process_args([Help]) :-
     write("Enter a list of hebrew words in latin characters to transliterate them in hebrew."), nl,
     write("Please consult hebrew.pl to see how characters are transliterated."), nl.
 process_args(Args) :-
-    write('Arguments received: '), write(Args), nl,
+    %write('Words received: '), write(Args), nl,
     transliterate_args(Args).
 
 transliterate_args([]) :- nl.
