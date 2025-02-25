@@ -43,9 +43,9 @@ transliterate(è) --> [ ֶ],!.        % Ségol
 transliterate(é) --> [ֵ],!.         % Tsere
 transliterate(i) --> [ ִ],!.        % Hiriq
 transliterate(o) --> [ ֹ],!.        % holam
-transliterate(â) --> [ֱ],!.         % Hateph Patah
+transliterate(ê) --> [ֱ],!.         % Hateph Segol
 transliterate(ä) --> [ֳ],!.         % Hateph Qamats
-transliterate(ê) --> [ֲ],!.         % Hateph Segol
+transliterate(â) --> [ֲ],!.         % Hateph Patah
 transliterate(e) --> [ְ],!.         % Shewa
 transliterate('V') --> [֫],!.       % Ole 
 

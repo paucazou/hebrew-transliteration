@@ -21,7 +21,7 @@ test(final_letters, [true(A==[צ, ץ])]) :-
     transliterate_word(['Z', 'Z'], A, []).
 
 test(diacritics, [true(A==[פ, 'ּ', פ, 'ַ', פ, 'ָ', פ, 'ֻ', פ, 'ֶ', פ, 'ֵ', פ, 'ִ', פ, 'ֹ', פ, 'ֱ', פ, 'ֳ', פ, 'ֲ', פ, 'ְ', פ, 'ְ', '֫'])]) :-
-    transliterate_word([p, '.', p, a, p, à, p, u, p, è, p, é, p, i, p, o, p, â, p, ä, p, ê, p, e, p, e, 'V'],
+    transliterate_word([p, '.', p, a, p, à, p, u, p, è, p, é, p, i, p, o, p, ê, p, ä, p, â, p, e, p, e, 'V'],
                        A,
                        []).
 
