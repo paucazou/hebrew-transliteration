@@ -3,8 +3,10 @@ This Prolog program can be used to transliterate from french characters to hebre
 # Usage
 This program has been tested only with SWI-Prolog. Other Prolog implementations can fail.
 Just call it from command line as follows:
-``` ./theb.pl d.àwid                                   18:23 - 27 C°
-דָּוִד 
+```
+./theb.pl way.axäzéq d.àwid b.ibegàdàw, way.iqeràHém';' wegam k.àl-hàAânàciym, A.âcèr A.it.wo
+
+וַיַּחֳזֵק דָּוִד בִּבְגָדָו, וַיִּקְרָעֵמ; וְגַם כָּל-הָאֲנָשִׁימ, אֲּשֶׁר אִּתּוֹ
 ```
 # Tests
 You can test the program by calling it from SWI-Prolog RPL:
