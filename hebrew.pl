@@ -34,22 +34,23 @@ transliterate(c) --> [שׁ],!.        % Shin
 transliterate('C') --> [שׂ],!.      % Sin
 transliterate(t) --> [ת],!.        % Tav
 
-% Diacritics
-transliterate('.') --> [ּ],!.       % Dagesh
-transliterate(a) --> [ ַ],!.        % Patah
-transliterate(à) --> [ָ],!.         % Qamats
-transliterate(u) --> [ ֻ],!.        % Qubbuts
-transliterate(è) --> [ ֶ],!.        % Ségol
-transliterate(é) --> [ֵ],!.         % Tsere
-transliterate(i) --> [ ִ],!.        % Hiriq
-transliterate(o) --> [ ֹ],!.        % holam
-transliterate(ê) --> [ֱ],!.         % Hateph Segol
-transliterate(ä) --> [ֳ],!.         % Hateph Qamats
-transliterate(â) --> [ֲ],!.         % Hateph Patah
-transliterate(e) --> [ְ],!.         % Shewa
-transliterate('V') --> [֫],!.       % Ole 
-
+transliterate(R) --> transliterate_diacritic(R), !.
 transliterate(R) --> [R].          % Keep every other character
+
+% Diacritics
+transliterate_diacritic('.') --> [ּ],!.       % Dagesh
+transliterate_diacritic(a) --> [ ַ],!.        % Patah
+transliterate_diacritic(à) --> [ָ],!.         % Qamats
+transliterate_diacritic(u) --> [ ֻ],!.        % Qubbuts
+transliterate_diacritic(è) --> [ ֶ],!.        % Ségol
+transliterate_diacritic(é) --> [ֵ],!.         % Tsere
+transliterate_diacritic(i) --> [ ִ],!.        % Hiriq
+transliterate_diacritic(o) --> [ ֹ],!.        % holam
+transliterate_diacritic(ê) --> [ֱ],!.         % Hateph Segol
+transliterate_diacritic(ä) --> [ֳ],!.         % Hateph Qamats
+transliterate_diacritic(â) --> [ֲ],!.         % Hateph Patah
+transliterate_diacritic(e) --> [ְ],!.         % Shewa
+transliterate_diacritic('V') --> [֫],!.       % Ole 
 
 % Final letters
 transliterate_final(m) --> [ם].    % Final Mem
@@ -61,6 +62,7 @@ transliterate_final('Z') --> [ץ].  % Final Tsade
 % Transliterate a full sentence
 transliterate_word([]) --> [].
 transliterate_word([H]) --> transliterate_final(H), !.
+transliterate_word([Final, Diacritic]) --> transliterate_final(Final), transliterate_diacritic(Diacritic),!.
 transliterate_word([H|T]) --> transliterate(H), transliterate_word(T).
 
 s(L, R) :- transliterate_word(L, LR, []), atomic_list_concat(LR, R).

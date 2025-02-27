@@ -20,6 +20,20 @@ test(final_letters, [true(A==[פ, ף])]) :-
 test(final_letters, [true(A==[צ, ץ])]) :-
     transliterate_word(['Z', 'Z'], A, []).
 
+
+
+test(final_letter_with_diacritic, [true(A==[כ, 'ַ', ך, 'ַ'])]) :-
+    transliterate_word([k, a, k, a], A, []).
+test(final_letter_with_diacritic, [true(A==[מ, 'ֻ', ם, 'ֻ'])]) :-
+    transliterate_word([m, u, m, u], A, []).
+test(final_letter_with_diacritic, [true(A==[נ, 'ֵ', ן, 'ֵ'])]) :-
+    transliterate_word([n, é, n, é], A, []).
+test(final_letter_with_diacritic, [true(A==[פ, 'ֵ', ף, 'ֵ'])]) :-
+    transliterate_word([p, é, p, é], A, []).
+test(final_letter_with_diacritic, [true(A==[צ, 'ֵ', ץ, 'ֵ'])]) :-
+    transliterate_word(['Z', é, 'Z', é], A, []).
+
+
 test(diacritics, [true(A==[פ, 'ּ', פ, 'ַ', פ, 'ָ', פ, 'ֻ', פ, 'ֶ', פ, 'ֵ', פ, 'ִ', פ, 'ֹ', פ, 'ֱ', פ, 'ֳ', פ, 'ֲ', פ, 'ְ', פ, 'ְ', '֫'])]) :-
     transliterate_word([p, '.', p, a, p, à, p, u, p, è, p, é, p, i, p, o, p, ê, p, ä, p, â, p, e, p, e, 'V'],
                        A,
